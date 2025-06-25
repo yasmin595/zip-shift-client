@@ -1,10 +1,14 @@
 import React from 'react';
 import authImage from '../../assets/authImage.png';
 import { useForm } from 'react-hook-form';
+import UseAuth from '../../hooks/UseAuth';
 
 const Register = () => {
     const {register, handleSubmit, 
         formState: { errors },} = useForm();
+const {createUser} = UseAuth();
+console.log(createUser)
+
     const onSubmit = data =>{
         console.log(data);
     }
