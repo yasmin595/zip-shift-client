@@ -5,6 +5,7 @@ import RootLayout from "../layouts/RootLayout";
 import Home from "../pages/Home/home";
 import AuthLayout from "../layouts/AuthLayout";
 import LogIn from "../pages/Authenticaion/LogIn";
+import Register from "../pages/Authenticaion/Register";
 
 
 
@@ -28,6 +29,10 @@ import LogIn from "../pages/Authenticaion/LogIn";
           {
             path:"/logIn",
             element:<LogIn></LogIn>
+          },
+          {
+            path:"/Register",
+            element:<Register></Register>,
           }
 
     ]
