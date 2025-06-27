@@ -1,6 +1,7 @@
 import React from 'react';
 import authImage from '../../assets/authImage.png';
 import { useForm } from 'react-hook-form';
+import SocialLogin from './SocialLogin';
 const LogIn = () => {
 const {register, handleSubmit, 
     formState: { errors },} = useForm();
@@ -31,6 +32,8 @@ const onSubmit = data =>{
         </fieldset>
 
        </form>
+           <p>Already have an account please<Link to='/login' className='tex-primary btn btn-link'> login</Link ></p>
+           <SocialLogin></SocialLogin>
         </div>
  
                 <div>

@@ -2,15 +2,24 @@ import React from 'react';
 import authImage from '../../assets/authImage.png';
 import { useForm } from 'react-hook-form';
 import UseAuth from '../../hooks/UseAuth';
+import { Link } from 'react-router';
+import SocialLogin from './SocialLogin';
 
 const Register = () => {
     const {register, handleSubmit, 
         formState: { errors },} = useForm();
 const {createUser} = UseAuth();
-console.log(createUser)
+
 
     const onSubmit = data =>{
         console.log(data);
+      createUser(data.email, data.password)
+      .then(result=>{
+        console.log(result.user)
+      })
+      .catch(error =>{
+        console.error(error)
+      })
     }
     
     return (
@@ -40,12 +49,16 @@ console.log(createUser)
           </fieldset>
   
          </form>
+             <p>Already have an account please<Link to='/login' className='tex-primary btn btn-link'> login</Link ></p>
+
+                   <SocialLogin></SocialLogin>
           </div>
    
                   <div>
   <img src={authImage} alt="" />
           </div>
         </div>
+     
 </div>
     );
 };
